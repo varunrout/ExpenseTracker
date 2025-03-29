@@ -4,7 +4,7 @@ const router = express.Router();
 const expenseController = require('../controllers/expenseController');
 const authMiddleware = require('../middleware/authMiddleware');
 
-// Protect all routes with authMiddleware
+// All expense routes require authentication
 router.use(authMiddleware);
 
 router.post('/', expenseController.createExpense);
